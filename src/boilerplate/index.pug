@@ -1,0 +1,20 @@
+extends ../_layout
+//- include ../_normalize
+//- include ../_font-awesome
+//- include ../_bootstrap
+//- include ../_jquery
+include ../_vue
+
+append meta
+  title Boilerplate
+
+append styles
+  link(rel='stylesheet', href='styles.styl')
+
+append scripts
+  script(src='scripts.coffee')
+
+append body
+  h1 Boilerplate
+  #vue(v-cloak)
+    p {{time}}

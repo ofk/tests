@@ -1,0 +1,14 @@
+doctype
+html(lang='ja')
+  head
+    block meta
+      meta(charset='UTF-8')
+    block styles
+      meta(name='viewport', content='width=device-width, initial-scale=1')
+
+  body
+    block body
+    if process.env.NODE_ENV === 'development'
+      script.
+        window.pp=typeof console!=='undefined'&&console.log&&console.log.bind&&console.log.bind(console);
+    block scripts
