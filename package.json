@@ -1,8 +1,19 @@
 {
   "name": "tests",
   "private": true,
+  "scripts": {
+    "serve": "parcel serve 'src/**/!(_)*.{html,pug}'",
+    "start": "npm run serve",
+    "prebuild": "rm -rf dist",
+    "build": "parcel build --public-url /tests/ --no-source-maps 'src/**/!(_)*.{html,pug}'",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
   "devDependencies": {
+    "coffeescript": "^2.4.0",
     "gh-pages": "^2.0.1",
-    "parcel-bundler": "^1.12.3"
+    "parcel-bundler": "^1.12.3",
+    "pug": "^2.0.3",
+    "stylus": "^0.54.5"
   }
 }
