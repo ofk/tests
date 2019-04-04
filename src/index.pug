@@ -1,0 +1,19 @@
+extends _layout
+include _bootstrap
+include _vue
+
+append meta
+  title tests
+
+append scripts
+  script(src='scripts.coffee')
+
+append body
+  .container
+    h1 tests
+    #vue(v-cloak)
+      .text-center(v-if='loading')
+        span.spinner-border
+      ul(v-if='!loading')
+        li(v-for='content in contents')
+          a(v-bind:href='content.name+"/"', v-text='content.name')
