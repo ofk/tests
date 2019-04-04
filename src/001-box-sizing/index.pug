@@ -1,0 +1,18 @@
+extends ../_layout
+include ../_vue
+
+append meta
+  title 001
+
+append styles
+  link(rel='stylesheet', href='styles.styl')
+
+append scripts
+  script(src='scripts.coffee')
+
+append body
+  h1 001
+  #vue(v-cloak)
+    section(v-bind:class='className', v-for='className in classNames')
+      h2 {{className}}
+      .box box

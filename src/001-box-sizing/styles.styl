@@ -1,0 +1,34 @@
+.box
+  border 10px solid blue
+  padding 20px
+  width 400px
+  height 200px
+  background-color cyan
+
+  &::before
+  &::after
+    display inline-block
+    border 5px solid red
+    padding 10px
+    width 100px
+    height 50px
+    background-color pink
+
+  &::before
+    content 'before'
+  &::after
+    content 'after'
+
+for value in content-box border-box
+  .parent-{value}
+    box-sizing value
+
+for value in content-box border-box inherit
+  .{value}
+    *
+      box-sizing value
+
+  .{value}.with-pseudo
+    *::before
+    *::after
+      box-sizing value
