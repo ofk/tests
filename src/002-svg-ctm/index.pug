@@ -1,0 +1,20 @@
+extends ../_layout
+include ../_vue
+
+append meta
+  title 002
+
+append styles
+  link(rel='stylesheet', href='styles.styl')
+
+append scripts
+  script(src='scripts.coffee')
+
+append body
+  h1 002
+  #vue(v-cloak)
+    p outer: {{outerCTM}}
+    p inner: {{innerCTM}}
+    svg(ref='outer', width=400, height=400, viewBox='0 0 400 400', style='background-color:grey')
+      svg(ref='inner', width=300, height=200, x=50, y=100, viewBox='0 0 600 400')
+        rect(x=200, y=100, width=200, height=200, fill='red')
