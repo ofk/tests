@@ -1,0 +1,19 @@
+extends ../_layout
+include ../_vue
+
+append meta
+  title 003
+
+append styles
+  link(rel='stylesheet', href='styles.styl')
+
+append scripts
+  script(src='scripts.coffee')
+
+append body
+  h1 003
+  #vue(v-cloak)
+    svg(ref='outer', width=400, height=200, viewBox='0 0 400 200', style='background-color:grey', v-on:pointerdown='logging', v-on:pointerup='logging', v-on:click='logging')
+      rect(x=100, y=50, width=200, height=100, fill='red', v-on:pointerdown='logging', v-on:pointerup='logging', v-on:click='logging')
+    ul(v-if='logs.length')
+      li(v-for='log in logs') {{log.type}} {{log.tag}}
